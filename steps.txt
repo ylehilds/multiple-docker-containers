@@ -48,3 +48,9 @@ sudo docker stop <container_id>
 sudo docker rm <container_id> or <docker_name>
 sudo docker images
 sudo docker rmi <image_id> -f
+flag to restart always when container crashes: --restart always. https://docs.docker.com/config/containers/start-containers-automatically/
+################################################################################################################
+Oracle claud infrastructure
+free tier info: https://www.oracle.com/cloud/free/#always-free
+opening certain ports: https://cleavr.io/cleavr-slice/opening-port-80-and-443-for-oracle-servers/
+compute > instances > instance details > virtual cloud network > security Lists > Default security List > Add Ingress Rules: Source CIDR = 0.0.0.0/0, Destination Port Range = 80,8080-8090,3000,etc.
