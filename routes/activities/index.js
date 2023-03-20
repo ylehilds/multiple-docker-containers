@@ -1,0 +1,8 @@
+'use strict'
+const activities = ['swimming','park','church activities','visit friends','service','game night nintendo or playstation, play together as a family','tennis','board games','basketball','sams club - hot dog or pizza meal','dollar movies','picnic','Museums','Zoo','Fishing ','Gardening ','Backyard Campout ','Ride a Bike ','Watch a sunset or sunrise ','Charades ','Go For a Drive ','Bowling ','Hide and Seek ','Have a Photo Taking Contest ','Ice Cream Outing: BRAUMS ','Roller Blading or Skating ','Learn to Play Musical Instruments ','Movie Marathon ','Emergency Plan Test ','Take a Walk ','Hiking ','Fly a Kite ','Scrapbooking ','Mystery Treasure Hunt ','Cook or Bake New or  Favorite Goodies ','Make a Family Movie ','Water War ','Make a collage ','Appreciation Night ','Snowball Fights ','Feed Ducks at the Pond or Lake ','See a Local School Play ','Favorite Songs ','Miniature Golf ','Old Photo Night ','Go To Provo Rec Center','Freesbie Golf','Ultimate Freesbie','Volleyball','Soccer','Any kind of Exercise/Gym/5BX Program','Programming: Code something fot fun as a family','Watch a kid movie together','Watch a family movie together','Play Minecraft as a family using Kindle fire tablet','Call a relative/friend','Visit a relative/friend','Play tag at a park','Go to to the lake or reservoir','build your own pizza','skiing or sledding or build a snow man or play on the snow','Drawing/Art competition','Science experiment','Play Capture the Flag','Eat Out (Way Out)','Volunteer','Check out the Stars']
+module.exports = async function (fastify, opts) {
+  fastify.get('/', async function (request, reply) {
+    const index = Math.floor(Math.random() * activities.length)
+    return activities[index]
+  })
+}
