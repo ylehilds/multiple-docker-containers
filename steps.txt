@@ -1,52 +1,48 @@
-Container #1
-sudo docker run -dit --name docker1 --restart always -p 8080:80 httpd:latest
-sudo doker ps
-sudo docker exec 9a7a02f97d8b sed -i 's/It works!/Docker 1/' /usr/local/apache2/htdocs/index.html
-
-Container #2
-sudo docker run -dit --name docker2 --restart always -p 8081:80 httpd:latest
-sudo doker ps
-sudo docker exec c6c29322f5dc sed -i 's/It works!/Docker 2/' /usr/local/apache2/htdocs/index.html
-
-Container #3
-sudo docker run -dit --name docker3 --restart always -p 3000:3000 fastify-docker
-
-
-
-Installing node (https://tecadmin.net/how-to-install-nvm-on-ubuntu-20-04/):
-sudo apt install curl 
+#1 Installing node (https://tecadmin.net/how-to-install-nvm-on-ubuntu-20-04/):
+sudo apt install curl
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.bashrc
 nvm install <node_version>
 
 
-Installing docker in Ubuntu 22.04
+#2 Installing docker in Ubuntu 22.04
 sudo apt install docker.io
 
-Installing docker fastify (https://medium.com/@davidkelley87/fastify-docker-%EF%B8%8F-9165da21ae23):
+#3 Installing docker fastify (https://medium.com/@davidkelley87/fastify-docker-%EF%B8%8F-9165da21ae23):
 mkdir fastify-docker
 cd fastify-docker
 npm init fastify -y
 npm i -y
 
-
-Dockerfile content:
+#4 Dockerfile content:
 FROM node:18
-
 WORKDIR /app
-
 COPY package.json .
-
 RUN npm install -y
-
 COPY . .
-
 EXPOSE 3000
-
 CMD ["npm", "start"]
 
+#5 Build docker image
+docker build -t fastify-docker .
 
-useful docker commands:
+#6 Run multiple dockers
+
+Container #1
+sudo docker run -dit --name docker1 --restart always -p 8080:80 httpd:latest
+sudo docker ps
+sudo docker exec <container_id> sed -i 's/It works!/Docker 1/' /usr/local/apache2/htdocs/index.html
+
+Container #2
+sudo docker run -dit --name docker2 --restart always -p 8081:80 httpd:latest
+sudo docker ps
+sudo docker exec <container_id> sed -i 's/It works!/Docker 2/' /usr/local/apache2/htdocs/index.html
+
+Container #3
+sudo docker run -dit --name docker3 --restart always -p 3000:3000 fastify-docker
+
+################################################################################################################
+Useful docker commands:
 sudo docker ps
 sudo docker stop <container_id>
 sudo docker rm <container_id> or <docker_name>
