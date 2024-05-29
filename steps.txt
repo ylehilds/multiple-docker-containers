@@ -23,7 +23,7 @@ git clone https://github.com/ylehilds/multiple-docker-containers.git
 cd multiple-docker-containers
 
 #6 Dockerfile content:
-FROM node:18
+FROM node:22
 WORKDIR /app
 COPY package.json .
 RUN npm install -y
