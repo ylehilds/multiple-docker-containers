@@ -6,6 +6,7 @@ nvm install <node_version>
 
 
 #2 Installing docker in Ubuntu 22.04
+sudo apt update
 sudo apt install docker.io
 
 #3 Installing docker fastify (https://medium.com/@davidkelley87/fastify-docker-%EF%B8%8F-9165da21ae23):
