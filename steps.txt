@@ -15,7 +15,13 @@ cd fastify-docker
 npm init fastify -y
 npm i -y
 
-#4 Dockerfile content:
+#4 install nano:
+sudo apt install nano
+
+#5 git clone this repo (skip step 6 ig cloning this repo):
+git clone https://github.com/ylehilds/multiple-docker-containers.git
+
+#6 Dockerfile content:
 FROM node:18
 WORKDIR /app
 COPY package.json .
@@ -24,10 +30,10 @@ COPY . .
 EXPOSE 3000
 CMD ["npm", "start"]
 
-#5 Build docker image
+#7 Build docker image
 sudo docker build -t fastify-docker .
 
-#6 Run multiple dockers (https://www.youtube.com/watch?v=spbkCihFpQ8&t=1s)
+#8 Run multiple dockers (https://www.youtube.com/watch?v=spbkCihFpQ8&t=1s)
 
 Container #1
 sudo docker run -dit --name docker1 --restart always -p 8080:80 httpd:latest
