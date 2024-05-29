@@ -18,7 +18,7 @@ npm i -y
 #4 install nano:
 sudo apt install nano
 
-#5 git clone this repo (skip step 6 ig cloning this repo):
+#5 git clone this repo (skip step 6 if cloning this repo):
 git clone https://github.com/ylehilds/multiple-docker-containers.git
 cd multiple-docker-containers
 
