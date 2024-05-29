@@ -20,6 +20,7 @@ sudo apt install nano
 
 #5 git clone this repo (skip step 6 ig cloning this repo):
 git clone https://github.com/ylehilds/multiple-docker-containers.git
+cd multiple-docker-containers
 
 #6 Dockerfile content:
 FROM node:18
