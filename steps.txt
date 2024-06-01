@@ -87,7 +87,7 @@ COPY . .
 
 EXPOSE 8081
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]
 
 #17 Build docker image
 sudo docker build -t quiz-backend .
