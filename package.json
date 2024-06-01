@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "tap \"test/**/*.test.js\"",
-    "start": "fastify start -l info app.js",
-    "dev": "fastify start -w -l info -P app.js"
+    "start": "fastify start -l info -p 4000 app.js",
+    "dev": "fastify start -w -l info -p 4000 app.js"
   },
   "keywords": [],
   "author": "",

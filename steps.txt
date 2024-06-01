@@ -28,7 +28,7 @@ WORKDIR /app
 COPY package.json .
 RUN npm install -y
 COPY . .
-EXPOSE 3000
+EXPOSE 4000
 CMD ["npm", "start"]
 
 #7 Build docker image
@@ -37,20 +37,81 @@ sudo docker build -t fastify-docker .
 #8 Run multiple dockers (https://www.youtube.com/watch?v=spbkCihFpQ8&t=1s)
 
 #9 open ports in Oracle cloud infrastructure (https://cleavr.io/cleavr-slice/opening-port-80-and-443-for-oracle-servers/)
-compute > instances > instance details > virtual cloud network > security Lists > Default security List > Add Ingress Rules: Source CIDR = 0.0.0.0/0, Destination Port Range = 80,8080-8090,3000,etc.
+compute > instances > instance details > virtual cloud network > security Lists > Default security List > Add Ingress Rules: Source CIDR = 0.0.0.0/0, Destination Port Range = 80,8080-8090,3000-8079,etc.
+
+#10 clone quizMaker repo at the root of multiple-docker-containers folder, if getting the quiz code from this repo skip this step
+git clone https://github.com/ylehilds/startup.git
+Comment it out lines 90-102 on file startup > service > index.js, the file has to do with implementing a middleware for authorization, but it is not yet working the middleware is called "secureApiRouter"
+
+#11 cd into repo
+cd startup
+
+#12 create a Dockerfile in the root of the startup folder
+nano Dockerfile
+
+#13 Dockerfile content:
+paste the following content in the Dockerfile:
+
+FROM node:22
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install -y
+
+COPY . .
+
+EXPOSE 8080
+
+CMD ["npm", "run", "dev"]
+
+#14 Build docker image
+sudo docker build -t quiz-ui .
+
+#15 create a Dockerfile in the root of the startup > service folder
+nano Dockerfile
+
+#16 Dockerfile content:
+paste the following content in the Dockerfile:
+
+FROM node:22
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install -y
+
+COPY . .
+
+EXPOSE 8081
+
+CMD ["npm", "run", "dev"]
+
+#17 Build docker image
+sudo docker build -t quiz-backend .
+
+#Container #1
+#sudo docker run -dit --name docker1 --restart always -p 8080:80 httpd:latest
+#sudo docker ps
+#sudo docker exec <container_id> sed -i 's/It works!/Docker 1/' /usr/local/apache2/htdocs/index.html
+
+#Container #2
+#sudo docker run -dit --name docker2 --restart always -p 8081:80 httpd:latest
+#sudo docker ps
+#sudo docker exec <container_id> sed -i 's/It works!/Docker 2/' /usr/local/apache2/htdocs/index.html
 
 Container #1
-sudo docker run -dit --name docker1 --restart always -p 8080:80 httpd:latest
+sudo docker run -dit --name docker1 --restart always -p 8080:80 quiz-ui
 sudo docker ps
-sudo docker exec <container_id> sed -i 's/It works!/Docker 1/' /usr/local/apache2/htdocs/index.html
 
 Container #2
-sudo docker run -dit --name docker2 --restart always -p 8081:80 httpd:latest
+sudo docker run -dit --name docker2 --restart always -p 8081:80 quiz-backend
 sudo docker ps
-sudo docker exec <container_id> sed -i 's/It works!/Docker 2/' /usr/local/apache2/htdocs/index.html
 
 Container #3
-sudo docker run -dit --name docker3 --restart always -p 3000:3000 fastify-docker
+sudo docker run -dit --name docker3 --restart always -p 4000:4000 fastify-docker
 
 ################################################################################################################
 Useful docker commands:
