@@ -1,0 +1,46 @@
+.main-dashboard {
+  flex: 1 calc(100vh - 110px);
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 4em;
+}
+
+.players {
+  float: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  font-size: xx-large;
+}
+
+.player-name {
+  flex: 1;
+  text-align: left;
+  padding-left: 0.5em;
+}
+
+.player-score {
+  float: left;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  font-size: x-large;
+  padding: 20px 0 20px 0;
+}
+
+.list-container { 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 10px; 
+} 
+
+.quiz-list {
+  float: left;
+  font-size: large;
+  padding: 20px 0 20px 0;
+}

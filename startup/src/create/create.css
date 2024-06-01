@@ -1,0 +1,176 @@
+.main-quiz {
+    flex: 1 calc(100vh - 110px);
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 4em;
+  }
+
+  .quiz-frame {
+    /* width: 660px; */
+    /* display: inline-block; */
+    align-items: center;
+    text-align: center;
+  } 
+
+  #quizTitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    /* margin-bottom: 1em; */
+    /* width: 400px; */
+    text-align: center;
+  }
+
+.float-none {
+  float: none;
+}
+
+#question-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#clear-button {
+  margin-left: 10px;
+}
+
+#question-form button[type="button"] {
+  margin-left: 10px;
+}
+
+.float-end {
+  float: right !important;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    max-width: 300px;
+    margin: auto;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  input[type="text"],
+  select {
+    padding: 5px;
+    /* margin-bottom: 10px; */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  select {
+    width: auto;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  #question-list.list-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 300px;
+    margin: auto;
+  }
+  
+  #question-list.list-group li {
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: left;
+    width: 100%;
+    list-style-type: none
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  #clear-button {
+    margin-left: 10px;
+  }
+  
+  #question-form button[type="button"] {
+    margin-left: 10px;
+  }
+  
+  .float-end {
+    float: right !important;
+  }
+
+  .row {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  
+  .col-md-6 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #editQuizTitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    /* margin-bottom: 1em; */
+    max-width: 300px;
+    margin: auto;
+  }
+
+  .save-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  .cancel-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  .edit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }

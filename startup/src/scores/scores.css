@@ -1,0 +1,11 @@
+td {
+  max-width: 40vw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+main {
+  align-items: center; 
+  justify-content: space-around;
+}

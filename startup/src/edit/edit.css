@@ -1,0 +1,71 @@
+/* edit.css */
+
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  input, select {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: -webkit-fill-available;
+  }
+  
+  button {
+    font-size: 16px;
+    /* color: white; */
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    padding: 15px 25px; /* Increase padding to make buttons larger */
+    border-radius: 25px; /* Adjust to make buttons round */
+    margin: 20px; /* Add margin for spacing between buttons */
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  button:active {
+    opacity: 0.6;
+  }
+  
+  button[disabled] {
+    /* background-color: #ccc; */
+    cursor: not-allowed;
+  }
+  
+  #editQuizTitle {
+    font-size: 24px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Specific button colors */
+  button.delete {
+    background-color: #FF0000;
+  }
+  
+  button.add {
+    background-color: #008000;
+  }
+  
+  button.save {
+    background-color: #FFA500;
+  }
+
+  button.edit {
+    background-color: #9999de;
+  }
+  
+  button.save {
+    background-color: orange;
+  }
+  
+  button.cancel {
+    background-color: #800080;
+  }
