@@ -103,11 +103,11 @@ sudo docker build -t quiz-backend .
 #sudo docker exec <container_id> sed -i 's/It works!/Docker 2/' /usr/local/apache2/htdocs/index.html
 
 Container #1
-sudo docker run -dit --name docker1 --restart always -p 8080:80 quiz-ui
+sudo docker run -dit --name docker1 --restart always -p 8080:8080 quiz-ui
 sudo docker ps
 
 Container #2
-sudo docker run -dit --name docker2 --restart always -p 8081:80 quiz-backend
+sudo docker run -dit --name docker2 --restart always -p 8081:8081 quiz-backend
 sudo docker ps
 
 Container #3
