@@ -11,7 +11,7 @@ const { peerProxy } = require('./peerProxy.js');
 const authCookieName = 'token';
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
+const port = process.argv.length > 2 ? process.argv[2] : 8081;
 
 // JSON body parsing using built-in middleware
 app.use(express.json());
@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Serve up the front-end static content hosting
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 // Trust headers that are forwarded from the proxy so we can determine IP addresses
 app.set('trust proxy', true);
@@ -185,9 +185,9 @@ app.use(function (err, req, res, next) {
 });
 
 // Return the application's default page if the path is unknown
-app.use((_req, res) => {
-  res.sendFile('index.html', { root: 'public' })
-})
+// app.use((_req, res) => {
+//   res.sendFile('index.html', { root: 'public' })
+// })
 
 // setAuthCookie in the HTTP response
 function setAuthCookie(res, authToken) {

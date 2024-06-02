@@ -3,9 +3,9 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   server: {
     proxy: {
-      '/api': 'http://localhost:3000',
+      '/api': 'http://0.0.0.0:8081',
       '/ws': {
-        target: 'ws://localhost:3000',
+        target: 'ws://0.0.0.0:8081',
         ws: true,
       },
     },
