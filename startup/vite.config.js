@@ -3,9 +3,16 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   server: {
     proxy: {
-      '/api': 'http://0.0.0.0:8081',
+      '/api': {
+        target: 'http://localhost:8081',
+        changeOrigin: true,
+        secure: false,
+        ws: true,
+      },
       '/ws': {
-        target: 'ws://0.0.0.0:8081',
+        target: 'ws://localhost:8081',
+        changeOrigin: true,
+        secure: false,
         ws: true,
       },
     },
