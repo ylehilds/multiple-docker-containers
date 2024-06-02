@@ -97,7 +97,7 @@ Add a symbolic link to the binary in a directory in your PATH to make it easier 
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 Run:
-sudo docker-compose up --build
+sudo docker-compose up --build -d
 
 #Container #1
 #sudo docker run -dit --name docker1 --restart always -p 8080:80 httpd:latest

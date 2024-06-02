@@ -5,6 +5,7 @@ services:
       dockerfile: Dockerfile1
     ports:
       - "8080:8080"
+    restart: always
     networks:
       - my-network
 
@@ -14,6 +15,7 @@ services:
       dockerfile: Dockerfile2
     ports:
       - "8081:8081"
+    restart: always
     networks:
       - my-network
 
