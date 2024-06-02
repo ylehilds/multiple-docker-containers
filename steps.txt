@@ -89,7 +89,10 @@ EXPOSE 8081
 
 CMD ["npm", "start"]
 
-#17 Build docker image
+#17 copy db secrets to server
+scp dbConfig.json <hostUser>>@<hostIp>>:multiple-docker-containers/startup/service/util/
+
+#18 Build docker image
 sudo docker build -t quiz-backend .
 
 #Container #1
