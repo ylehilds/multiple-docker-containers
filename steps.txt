@@ -49,8 +49,8 @@ cd startup
 #12 create a Dockerfile in the root of the startup folder
 nano Dockerfile
 
-#13 Dockerfile content:
-paste the following content in the Dockerfile:
+#13 Dockerfile1 content:
+paste the following content in the Dockerfile1:
 
 FROM node:22
 
@@ -61,19 +61,14 @@ COPY package.json .
 RUN npm install -y
 
 COPY . .
-
-EXPOSE 8080
 
 CMD ["npm", "run", "dev"]
 
-#14 Build docker image
-sudo docker build -t quiz-ui .
+#14 create a Dockerfile in the root of the startup > service folder
+nano Dockerfile2
 
-#15 create a Dockerfile in the root of the startup > service folder
-nano Dockerfile
-
-#16 Dockerfile content:
-paste the following content in the Dockerfile:
+#15 Dockerfile2 content:
+paste the following content in the Dockerfile2:
 
 FROM node:22
 
@@ -84,16 +79,25 @@ COPY package.json .
 RUN npm install -y
 
 COPY . .
-
-EXPOSE 8081
 
 CMD ["npm", "start"]
 
 #17 copy db secrets to server
 scp dbConfig.json <hostUser>>@<hostIp>>:multiple-docker-containers/startup/service/util/
 
-#18 Build docker image
-sudo docker build -t quiz-backend .
+#18 run if available or install docker compose
+installing docker compose:
+sudo curl -SL https://github.com/docker/compose/releases/download/v2.27.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+for latest command go to the official install page: https://docs.docker.com/compose/install/standalone/
+
+Apply executable permissions to the standalone binary in the target path for the installation:
+sudo chmod +x /usr/local/bin/docker-compose
+
+Add a symbolic link to the binary in a directory in your PATH to make it easier to run the docker-compose command. For example:
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+Run:
+sudo docker-compose up --build
 
 #Container #1
 #sudo docker run -dit --name docker1 --restart always -p 8080:80 httpd:latest
