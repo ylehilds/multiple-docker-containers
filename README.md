@@ -3,6 +3,21 @@ This personal project demonstrates how to run multiple docker containers using d
 
 live project: http://129.153.82.90:8080 (QuizMaker frontend), http://129.153.82.90:8081 (QuizMaker API backend), http://129.153.82.90:4000/activities (API backend), and http://129.153.82.90:4000/scriptures (API backend)
 
+## 📑 References
+
+> **App Details**  
+> See the [QuizMaker README](./startup/README.md) for detailed information.
+
+> **Important Note to run this application**  
+> Follow the [steps.txt](steps.txt) guide to run multiple Docker containers on the same server.
+
+## 🔌 API Skeleton
+- See startup > index.js
+
+## 🛠 Tech Stack
+- **Runtime:** Node.js (Node 22)
+- **Framework:** Express.js, Fastify & React
+- **Containerization:** Docker (single image; extendable with Compose)
 
 # Getting Started with [Fastify-CLI](https://www.npmjs.com/package/fastify-cli)
 This project was bootstrapped with Fastify-CLI.
@@ -28,6 +43,10 @@ Run the test cases.
 
 To learn Fastify, check out the [Fastify documentation](https://www.fastify.io/docs/latest/).
 
-[QuizMaker Link README](./startup/README.md)
+## 📄 License
+MIT — see `LICENSE`.
 
-[Steps to make multiple Docker containers running in same server Link](steps.txt)
+## 👤 Author
+**Lehi Alcantara**  
+🌐 https://www.lehi.dev  
+✉️ lehi@lehi.dev
