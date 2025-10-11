@@ -2,14 +2,14 @@ const axios = require('axios');
 
 module.exports = async function (fastify, opts) {
   fastify.get('/', async function (request, reply) {
-    const movieName = request.query.name;
+    let movieName = request.query.name;
 
     if (!movieName) {
       return reply.status(400).send({ error: 'Movie name is required' });
     }
 
     try {
-      if (movieName.startsWith('/')) movieName.replace('/', '') // this is to handle if domain forwarding to cleanup forward slash.
+      if (movieName.startsWith('/')) movieName = movieName.replace('/', '') // this is to handle if domain forwarding to cleanup forward slash.
       const response = await axios.get('http://www.omdbapi.com/', {
         params: {
           apikey: '<api-key>', // Replace with your valid OMDb API key
