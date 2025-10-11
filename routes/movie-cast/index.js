@@ -9,6 +9,7 @@ module.exports = async function (fastify, opts) {
     }
 
     try {
+      if (movieName.startsWith('/')) movieName.replace('/', '') // this is to handle if domain forwarding to cleanup forward slash.
       const response = await axios.get('http://www.omdbapi.com/', {
         params: {
           apikey: '<api-key>', // Replace with your valid OMDb API key
