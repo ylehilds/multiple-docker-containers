@@ -119,8 +119,8 @@ sudo docker ps
 
 Container #3
 At the root of the project run these commands (this will enable all routes from port 4000 to be created and available):
-sudo docker build -t movies .
-sudo docker run -dit --name docker3 --restart always -p 4000:4000 movies
+sudo docker build -t fastify-docker .
+sudo docker run -dit --name docker3 --restart always -p 4000:4000 fastify-docker
 
 ################################################################################################################
 Useful docker commands:
