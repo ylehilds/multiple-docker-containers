@@ -130,6 +130,8 @@ sudo docker rm <container_id> or <container_name>
 sudo docker images
 sudo docker rmi <image_id> -f
 flag to restart always when container crashes: --restart always. https://docs.docker.com/config/containers/start-containers-automatically/
+sudo docker exec -it <docker_name> /bin/bash
+sudo docker logs -f --timestamps <docker_name>
 ################################################################################################################
 Oracle claud infrastructure
 free tier info: https://www.oracle.com/cloud/free/#always-free
